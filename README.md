@@ -20,6 +20,7 @@ During these 5 seconds, if we try to click the other button nothing will happen 
 In the meantime, we can click the other button to start yet another process in another Worker without affecting the responsiveness of the main application.
 
 ## The code
+Check the files above for the full thing, but the Web Worker specific code is here.
 
 ````javascript
 // worker.html
