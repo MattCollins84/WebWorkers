@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>WebWorkers test</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h1>No Web Workers</h1>
+
+        <ul>
+            <li><a href="no-workers.html">No Workers</a></li>
+            <li><a href="workers.html">Workers</a></li>
+        </ul>
+
+        <div class="column">
+            <button type="button" onclick="start('left')">Start Red</button>
+        </div>
+
+        <div class="column">
+            <button type="button" onclick="start('right')">Start Blue</button>
+        </div>
+
+        <div class="column red clear" id="left"></div>
+        <div class="column blue" id="right"></div>
+
+        <script>
+
+            var wait = function(ms) {
+                var start = Date.now(),
+                    now = start;
+                while (now - start < ms) {
+                    now = Date.now();
+                }
+            }
+
+            var start = function(col) {
+                wait(5000);
+                document.getElementById(col).innerText = "DONE";
+            }
+
+        </script>
+
+    </body>
+</html>

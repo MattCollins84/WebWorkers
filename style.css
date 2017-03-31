@@ -1,0 +1,23 @@
+.column {
+    width: 300px;
+    float: left;
+    margin: 3px;
+    border: 3px solid transparent;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+.red {
+    border: 3px solid red;
+    background: #FF0000;
+}
+
+.blue {
+    border: 3px solid blue;
+    background: #0000FF;
+}
+
+.clear {
+    clear: both;
+}

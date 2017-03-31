@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>WebWorkers test</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h1>No Web Workers</h1>
+
+        <ul>
+            <li><a href="no-workers.html">No Workers</a></li>
+            <li><a href="workers.html">Workers</a></li>
+        </ul>
+
+        <div class="column">
+            <button type="button" onclick="start('left')">Start Red</button>
+        </div>
+
+        <div class="column">
+            <button type="button" onclick="start('right')">Start Blue</button>
+        </div>
+
+        <div class="column red clear" id="left"></div>
+        <div class="column blue" id="right"></div>
+
+        <script>
+
+            var start = function(col) {
+                var myWorker = new Worker('worker.js');
+                myWorker.postMessage("go");
+                myWorker.onmessage = function(e) {
+                    document.getElementById(col).innerText = "DONE";
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
