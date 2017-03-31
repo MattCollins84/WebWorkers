@@ -34,7 +34,9 @@ var start = function(col) {
         document.getElementById(col).innerText = "DONE";
     }
 }
+````
 
+````javascript
 // worker.js
 // wait function
 var wait = function(ms) {
